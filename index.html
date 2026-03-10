@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,13 +16,25 @@
       --accent-2: #22d3ee;
       --chip: rgba(96, 165, 250, 0.12);
       --border: rgba(148, 163, 184, 0.18);
-      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --shadow: 0 20px 50px rgba(0, 0, 0, .35);
       --success: #34d399;
       --warn: #fbbf24;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    .badge-num {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 800;
+      color: white;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -38,10 +51,10 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
       background-size: 26px 26px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 80%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent 80%);
       pointer-events: none;
     }
 
@@ -74,7 +87,8 @@
       box-shadow: var(--shadow);
     }
 
-    .nav a, .nav button {
+    .nav a,
+    .nav button {
       color: var(--text);
       text-decoration: none;
       border: 0;
@@ -86,7 +100,9 @@
       transition: .22s ease;
     }
 
-    .nav a:hover, .nav button:hover, .nav .active {
+    .nav a:hover,
+    .nav button:hover,
+    .nav .active {
       background: rgba(96, 165, 250, .16);
       color: white;
     }
@@ -119,7 +135,7 @@
       height: 320px;
       right: -120px;
       top: -120px;
-      background: radial-gradient(circle, rgba(96,165,250,.28), transparent 60%);
+      background: radial-gradient(circle, rgba(96, 165, 250, .28), transparent 60%);
       pointer-events: none;
     }
 
@@ -166,7 +182,7 @@
       padding: 10px 14px;
       border-radius: 999px;
       background: var(--chip);
-      border: 1px solid rgba(96,165,250,.2);
+      border: 1px solid rgba(96, 165, 250, .2);
       color: #dbeafe;
       font-size: 14px;
     }
@@ -182,7 +198,7 @@
       padding: 12px 16px;
       border-radius: 14px;
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(34,211,238,.12));
+      background: linear-gradient(135deg, rgba(96, 165, 250, .16), rgba(34, 211, 238, .12));
       color: white;
       text-decoration: none;
       display: inline-flex;
@@ -191,8 +207,14 @@
       transition: .22s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
-    .btn.secondary { background: rgba(255,255,255,.04); color: var(--text); }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, .04);
+      color: var(--text);
+    }
 
     .hero-side {
       padding: 22px;
@@ -201,18 +223,20 @@
     }
 
     .mini {
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 16px;
     }
 
-    .mini h3, .section h2 {
+    .mini h3,
+    .section h2 {
       margin: 0 0 10px;
       font-size: 18px;
     }
 
-    .mini p, .mini a {
+    .mini p,
+    .mini a {
       color: var(--muted);
       margin: 6px 0;
       text-decoration: none;
@@ -274,7 +298,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(180deg, rgba(96,165,250,.45), rgba(34,211,238,.12));
+      background: linear-gradient(180deg, rgba(96, 165, 250, .45), rgba(34, 211, 238, .12));
     }
 
     .item {
@@ -291,7 +315,7 @@
       height: 12px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 0 4px rgba(96,165,250,.14);
+      box-shadow: 0 0 0 4px rgba(96, 165, 250, .14);
     }
 
     .item h3 {
@@ -305,7 +329,8 @@
       margin: 6px 0 10px;
     }
 
-    .item ul, .accordion-body ul {
+    .item ul,
+    .accordion-body ul {
       margin: 0;
       padding-left: 18px;
       color: var(--muted);
@@ -319,13 +344,16 @@
     }
 
     .skill-box {
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 16px;
     }
 
-    .skill-box h3 { margin-top: 0; font-size: 17px; }
+    .skill-box h3 {
+      margin-top: 0;
+      font-size: 17px;
+    }
 
     .tag-list {
       display: flex;
@@ -337,8 +365,8 @@
       font-size: 13px;
       padding: 8px 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(148,163,184,.15);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(148, 163, 184, .15);
       color: #dbeafe;
     }
 
@@ -351,7 +379,7 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       overflow: hidden;
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
     }
 
     .accordion-btn {
@@ -374,9 +402,17 @@
       display: none;
     }
 
-    .accordion-item.open .accordion-body { display: block; }
-    .accordion-item.open .chev { transform: rotate(180deg); }
-    .chev { transition: .2s ease; }
+    .accordion-item.open .accordion-body {
+      display: block;
+    }
+
+    .accordion-item.open .chev {
+      transform: rotate(180deg);
+    }
+
+    .chev {
+      transition: .2s ease;
+    }
 
     .foot {
       text-align: center;
@@ -394,29 +430,55 @@
 
     .filter {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
       color: var(--text);
       padding: 10px 14px;
       border-radius: 999px;
       cursor: pointer;
     }
 
-    .filter.active { background: rgba(96,165,250,.16); }
+    .filter.active {
+      background: rgba(96, 165, 250, .16);
+    }
 
     @media (max-width: 980px) {
-      .hero, .grid { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: repeat(2, 1fr); }
-      .skill-groups { grid-template-columns: 1fr; }
+
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skill-groups {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
-      .wrap { width: min(100% - 20px, 100%); }
-      .hero-main, .hero-side, .section { padding: 18px; }
-      .metrics { grid-template-columns: 1fr; }
-      .nav { border-radius: 22px; }
+      .wrap {
+        width: min(100% - 20px, 100%);
+      }
+
+      .hero-main,
+      .hero-side,
+      .section {
+        padding: 18px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        border-radius: 22px;
+      }
     }
   </style>
 </head>
+
 <body class="bg-grid">
   <div class="wrap">
     <div class="topbar">
@@ -426,19 +488,22 @@
         <a href="#skills">Skills</a>
         <a href="#impact">Impact</a>
         <a href="#education">Education</a>
-        <button id="themeBtn" type="button">Toggle contrast</button>
       </nav>
     </div>
 
     <section class="hero" id="top">
       <div class="card hero-main">
-        <div class="eyebrow">Available for Senior QA Automation / Test Architect roles</div>
+        <div class="eyebrow">Available for Senior QA Automation, Project based or Consulting roles</div>
         <h1>Olimpiu-Vasile Galea</h1>
-        <div class="headline">Senior QA Automation Engineer · Cypress Architect · API · CI/CD · Performance Testing</div>
+        <div class="headline">Senior QA Automation Engineer · Cypress Architect · API · CI/CD · Performance Testing
+        </div>
         <p class="summary">
-          QA Automation Engineer with 8+ years of experience in software testing, automation architecture, performance testing, and team enablement.
-          Built 20+ Cypress frameworks from scratch and 3000+ automated tests across 20+ applications. Reduced regression cycles from around 3 days of manual testing to under 2 hours.
-          Strong in UI, API, end-to-end, visual, authentication, and database validation, with hands-on work in GitHub Actions, Jenkins, Docker, TestRail, Jira, JMeter, Python, and .NET-based internal testing utilities.
+          QA Automation Engineer with 8+ years of experience in software testing, automation architecture, performance
+          testing, and team enablement.
+          Built 20+ Cypress frameworks from scratch and 3000+ automated tests across 20+ applications. Reducedf
+          regression cycles from around 3 days of manual testing to under 2 hours.
+          Strong in UI, API, end-to-end, visual, authentication, and database validation, with hands-on work in GitHub
+          Actions, Jenkins, Docker, TestRail, Jira, JMeter, Python, and .NET-based internal testing utilities.
         </p>
         <div class="chips">
           <span class="chip">Cypress</span>
@@ -451,17 +516,31 @@
           <span class="chip">UI Testing</span>
           <span class="chip">Leadership</span>
         </div>
+
+        <div class="section-divider">
+          <span>Contact & Profiles</span>
+        </div>
+
         <div class="cta-row">
           <a class="btn" href="mailto:oli.galea95@gmail.com">Email</a>
           <a class="btn secondary" href="tel:+40765263489">Call</a>
-          <a class="btn secondary" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/olimpiu-galea-3189b5253/">LinkedIn</a>
-          <a class="btn secondary" target="_blank" rel="noreferrer" href="https://www.upwork.com/freelancers/~01074b72ebdf9f9573?viewMode=1">Upwork</a>
+          <a class="btn secondary" target="_blank" rel="noreferrer"
+            href="https://www.linkedin.com/in/olimpiu-galea-3189b5253/">LinkedIn</a>
+          <a class="btn secondary" target="_blank" rel="noreferrer"
+            href="https://www.upwork.com/freelancers/~01074b72ebdf9f9573?viewMode=1">Upwork</a>
         </div>
       </div>
 
       <aside class="card hero-side">
         <div class="mini">
           <h3>Contact</h3>
+          <img src="assets/image.jpg" alt="Olimpiu-Vasile Galea" style="
+            width:150px;
+            height:auto;
+            border-radius:22px;
+            object-fit:cover;
+            box-shadow:0 10px 30px rgba(0,0,0,.45);
+          " />
           <p>📍 405200 Cluj-Napoca, Romania</p>
           <p>📞 (+40) 0765263489</p>
           <p>✉️ <a href="mailto:oli.galea95@gmail.com">oli.galea95@gmail.com</a></p>
@@ -473,16 +552,36 @@
         </div>
         <div class="mini">
           <h3>Profile theme</h3>
-          <p>Quality through efficiency. Strong ownership, practical automation, fast feedback, and scalable frameworks that help teams deliver safer products.</p>
+          <p>Quality through efficiency. Strong ownership, practical automation, fast feedback, and scalable frameworks
+            that help teams deliver safer products.</p>
         </div>
       </aside>
     </section>
 
     <section class="metrics" aria-label="Career highlights">
-      <div class="metric card"><div class="num" data-target="20">0+</div><div class="label">Cypress frameworks built from scratch</div></div>
-      <div class="metric card"><div class="num" data-target="3000">0+</div><div class="label">Automated tests written across products</div></div>
-      
-      <div class="metric card"><div class="num" data-target="5">0+</div><div class="label">Projects run in parallel in CI</div></div>
+
+      <div class="metric card">
+        <div class="badge-num">AI Tools</div>
+        <div class="label">
+          Daily AI-assisted development using Cursor and modern LLMs (GPT / Claude Opus) to accelerate automation
+          frameworks and debugging
+        </div>
+      </div>
+
+      <div class="metric card">
+        <div class="num" data-target="20">0+</div>
+        <div class="label">Cypress frameworks built from scratch</div>
+      </div>
+      <div class="metric card">
+        <div class="num" data-target="3000">0+</div>
+        <div class="label">Automated tests written across products</div>
+      </div>
+
+      <div class="metric card">
+        <div class="num" data-target="5">0+</div>
+        <div class="label">Projects run in parallel in CI</div>
+      </div>
+
     </section>
 
     <div class="grid">
@@ -494,15 +593,22 @@
             <div class="meta">Lateral Inc · Cluj-Napoca · Current</div>
             <ul>
               <li>Created 20+ Cypress automation frameworks from scratch for different types of web applications.</li>
-              <li>Built and maintained 3000+ automated tests covering UI, API, end-to-end, authentication, visual, contract, and database validation scenarios.</li>
-              <li>Implemented advanced Cypress architecture with custom commands, custom reporters, retries, flaky-test handling, intercept/stubbing, reusable fixtures, test-data generators, environment configuration, CI integration, and parallelization.</li>
+              <li>Built and maintained 3000+ automated tests covering UI, API, end-to-end, authentication, visual,
+                contract, and database validation scenarios.</li>
+              <li>Implemented advanced Cypress architecture with custom commands, custom reporters, retries, flaky-test
+                handling, intercept/stubbing, reusable fixtures, test-data generators, environment configuration, CI
+                integration, and parallelization.</li>
               <li>Reduced regression testing from around 3 days of manual work to a maximum 2-hour automated run.</li>
-              <li>Structured suites into Acceptance (read-only) and Regression (CRUD) flows to balance speed and depth.</li>
-              <li>Integrated automation into Jenkins, GitHub Actions, Dockerized environments, and local execution flows.</li>
+              <li>Structured suites into Acceptance (read-only) and Regression (CRUD) flows to balance speed and depth.
+              </li>
+              <li>Integrated automation into Jenkins, GitHub Actions, Dockerized environments, and local execution
+                flows.</li>
               <li>Implemented GitHub Actions matrix runs and supported 5 projects running in parallel.</li>
-              <li>Took care of interviews for the company, designed automation interview tasks, reviewed coding exercises, and helped with hiring decisions.</li>
+              <li>Took care of interviews for the company, designed automation interview tasks, reviewed coding
+                exercises, and helped with hiring decisions.</li>
               <li>Created a Cypress Academy inside the company for beginners and mentored 5–10 engineers.</li>
-              <li>Managed automation projects across the company and defined testing strategy from scratch for about 90% of projects.</li>
+              <li>Managed automation projects across the company and defined testing strategy from scratch for about 90%
+                of projects.</li>
               <li>Learned .NET C# and developed small internal APIs used only for testing.</li>
               <li>Developed ways of working for performance testing with JMeter and created custom JMeter reports.</li>
               <li>Produced training documents and best-practices documentation for QA teams.</li>
@@ -518,7 +624,8 @@
               <li>Worked with Jira, TestRail, and Jenkins.</li>
               <li>Performed manual testing for various software applications.</li>
               <li>Documented defects, created detailed test reports, and maintained test documentation.</li>
-              <li>Collaborated with development teams to resolve identified issues and validate functionality against client requirements.</li>
+              <li>Collaborated with development teams to resolve identified issues and validate functionality against
+                client requirements.</li>
               <li>Estimated personal tasks and coordinated the team before release and at code freeze.</li>
             </ul>
           </article>
@@ -613,7 +720,8 @@
           </div>
           <div class="accordion" id="impactList">
             <div class="accordion-item open" data-kind="automation">
-              <button class="accordion-btn"><span>Framework architecture at scale</span><span class="chev">⌄</span></button>
+              <button class="accordion-btn"><span>Framework architecture at scale</span><span
+                  class="chev">⌄</span></button>
               <div class="accordion-body">
                 <ul>
                   <li>20+ frameworks from scratch.</li>
@@ -649,7 +757,8 @@
                 <ul>
                   <li>Worked with JMeter for performance and load testing.</li>
                   <li>Created custom performance reports.</li>
-                  <li>Implemented Mochawesome custom HTML, Allure, TestRail integration, and post-run email reporting.</li>
+                  <li>Implemented Mochawesome custom HTML, Allure, TestRail integration, and post-run email reporting.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -663,8 +772,11 @@
               <button class="accordion-btn"><span>Education</span><span class="chev">⌄</span></button>
               <div class="accordion-body">
                 <ul>
-                  <li><strong>Babes-Bolyai University, Faculty of Mathematics and Informatics, Cluj-Napoca</strong><br />Mathematics and Informatics · October 2016 – September 2022 · Profile noted in original CV as 2nd year.</li>
-                  <li><strong>"Andrei Mureșanu" National College, Dej</strong><br />Mathematics-Computer Sciences Advanced · September 2012 – June 2015.</li>
+                  <li><strong>Babes-Bolyai University, Faculty of Mathematics and Informatics,
+                      Cluj-Napoca</strong><br />Mathematics and Informatics · October 2016 – September 2022 · Profile
+                    noted in original CV as 2nd year.</li>
+                  <li><strong>"Andrei Mureșanu" National College, Dej</strong><br />Mathematics-Computer Sciences
+                    Advanced · September 2012 – June 2015.</li>
                 </ul>
               </div>
             </div>
@@ -673,18 +785,21 @@
               <div class="accordion-body">
                 <ul>
                   <li>Helps clients build a fast and easy way to make sure their entire application is working.</li>
-                  <li>Focuses on quick automation setups, including UI loading checks for each page and API validation for each page.</li>
-                  <li>Offers frameworks that manual testers can use in a reasonable amount of time without needing long-term automation contracts.</li>
+                  <li>Focuses on quick automation setups, including UI loading checks for each page and API validation
+                    for each page.</li>
+                  <li>Offers frameworks that manual testers can use in a reasonable amount of time without needing
+                    long-term automation contracts.</li>
                 </ul>
               </div>
             </div>
-            
+
           </div>
         </section>
       </div>
     </div>
 
-    <p class="foot">Interactive HTML CV · Designed for modern browsers · Easy to export to PDF from the browser print dialog.</p>
+    <p class="foot">Interactive HTML CV · Designed for modern browsers · Easy to export to PDF from the browser print
+      dialog.</p>
   </div>
 
   <script>
@@ -751,4 +866,5 @@
     sections.forEach(sec => navObserver.observe(sec));
   </script>
 </body>
+
 </html>
