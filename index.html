@@ -21,12 +21,6 @@
       --warn: #fbbf24;
     }
 
-    .badge-num {
-      font-size: clamp(24px, 4vw, 38px);
-      font-weight: 800;
-      color: white;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -39,10 +33,7 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 24%),
-        linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 28%), radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 24%), linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
       min-height: 100vh;
     }
 
@@ -50,9 +41,7 @@
       content: "";
       position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
       background-size: 26px 26px;
       mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent 80%);
       pointer-events: none;
@@ -98,6 +87,7 @@
       cursor: pointer;
       font: inherit;
       transition: .22s ease;
+      white-space: nowrap;
     }
 
     .nav a:hover,
@@ -187,6 +177,15 @@
       font-size: 14px;
     }
 
+    .section-divider {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #d4e5ff;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
     .cta-row {
       display: flex;
       flex-wrap: wrap;
@@ -203,8 +202,10 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       transition: .22s ease;
+      min-height: 44px;
     }
 
     .btn:hover {
@@ -243,6 +244,17 @@
       word-break: break-word;
     }
 
+    .profile-photo {
+      width: 150px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+      margin-bottom: 12px;
+    }
+
     .metrics {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -258,6 +270,7 @@
       text-align: left;
     }
 
+    .badge-num,
     .metric .num {
       font-size: clamp(24px, 4vw, 38px);
       font-weight: 800;
@@ -327,6 +340,7 @@
       color: var(--accent-2);
       font-size: 14px;
       margin: 6px 0 10px;
+      line-height: 1.45;
     }
 
     .item ul,
@@ -335,6 +349,10 @@
       padding-left: 18px;
       color: var(--muted);
       line-height: 1.65;
+    }
+
+    .accordion-body ul ul {
+      margin-top: 6px;
     }
 
     .skill-groups {
@@ -393,6 +411,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       font: inherit;
     }
 
@@ -412,6 +431,7 @@
 
     .chev {
       transition: .2s ease;
+      flex: 0 0 auto;
     }
 
     .foot {
@@ -435,6 +455,7 @@
       padding: 10px 14px;
       border-radius: 999px;
       cursor: pointer;
+      font: inherit;
     }
 
     .filter.active {
@@ -459,21 +480,151 @@
 
     @media (max-width: 640px) {
       .wrap {
-        width: min(100% - 20px, 100%);
+        width: calc(100% - 16px);
+        padding: 16px 0 40px;
+      }
+
+      .topbar {
+        position: static;
+        margin-bottom: 14px;
+      }
+
+      .nav {
+        width: 100%;
+        border-radius: 18px;
+        padding: 8px;
+        gap: 6px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav a,
+      .nav button {
+        flex: 0 0 auto;
+        padding: 9px 12px;
+        font-size: 14px;
+      }
+
+      .hero {
+        gap: 14px;
       }
 
       .hero-main,
       .hero-side,
       .section {
-        padding: 18px;
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 30px;
+        line-height: 1.08;
+      }
+
+      .headline {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      .summary {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .chips {
+        gap: 8px;
+      }
+
+      .chip {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .profile-photo {
+        width: 110px;
+        border-radius: 16px;
       }
 
       .metrics {
         grid-template-columns: 1fr;
+        gap: 10px;
       }
 
-      .nav {
-        border-radius: 22px;
+      .metric {
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .badge-num,
+      .metric .num {
+        font-size: 26px;
+      }
+
+      .metric .label {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .grid {
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .mini {
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      .section h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .item h3 {
+        font-size: 16px;
+        line-height: 1.35;
+      }
+
+      .meta {
+        font-size: 13px;
+      }
+
+      .item ul,
+      .accordion-body ul {
+        padding-left: 16px;
+      }
+
+      .item ul,
+      .accordion-body ul,
+      .mini p,
+      .mini a,
+      .summary,
+      .label {
+        word-break: break-word;
+      }
+
+      .accordion-btn {
+        padding: 14px 16px;
+      }
+
+      .accordion-body {
+        padding: 0 16px 16px;
       }
     }
   </style>
@@ -482,66 +633,36 @@
 <body class="bg-grid">
   <div class="wrap">
     <div class="topbar">
-      <nav class="nav" id="nav">
-        <a href="#top" class="active">Top</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#impact">Impact</a>
-        <a href="#education">Education</a>
-        <a href="#extracurricular">Extracurricular</a>
-      </nav>
+      <nav class="nav" id="nav"> <a href="#top" class="active">Top</a> <a href="#experience">Experience</a> <a
+          href="#skills">Skills</a> <a href="#impact">Impact</a> <a href="#education">Education</a> <a
+          href="#extracurricular">Extracurricular</a> </nav>
     </div>
-
     <section class="hero" id="top">
       <div class="card hero-main">
         <div class="eyebrow">Available for Senior QA Automation, Project based or Consulting roles</div>
         <h1>Olimpiu-Vasile Galea</h1>
         <div class="headline">Senior QA Automation Engineer · Cypress Architect · API · CI/CD · Performance Testing
         </div>
-        <p class="summary">
-          QA Automation Engineer with 8+ years of experience in software testing, automation architecture, performance
-          testing, and team enablement.
-          Built 20+ Cypress frameworks from scratch and 3000+ automated tests across 20+ applications. Reduced
-          regression cycles from around 3 days of manual testing to under 2 hours.
-          Strong in UI, API, end-to-end, visual, authentication, and database validation, with hands-on work in GitHub
-          Actions, Jenkins, Docker, TestRail, Jira, JMeter, Python, and .NET-based internal testing utilities.
-        </p>
-        <div class="chips">
-          <span class="chip">Cypress</span>
-          <span class="chip">JMeter</span>
-          <span class="chip">GitHub Actions</span>
-          <span class="chip">Jenkins</span>
-          <span class="chip">Docker</span>
-          <span class="chip">REST API Testing</span>
-          <span class="chip">DB Testing</span>
-          <span class="chip">UI Testing</span>
-          <span class="chip">Leadership</span>
-        </div>
-
-        <div class="section-divider">
-          <span>Contact & Profiles</span>
-        </div>
-
-        <div class="cta-row">
-          <a class="btn" href="mailto:oli.galea95@gmail.com">Email</a>
-          <a class="btn secondary" href="tel:+40765263489">Call</a>
-          <a class="btn secondary" target="_blank" rel="noreferrer"
-            href="https://www.linkedin.com/in/olimpiu-galea-3189b5253/">LinkedIn</a>
-          <a class="btn secondary" target="_blank" rel="noreferrer"
-            href="https://www.upwork.com/freelancers/~01074b72ebdf9f9573?viewMode=1">Upwork</a>
-        </div>
+        <p class="summary"> QA Automation Engineer with 8+ years of experience in software testing, automation
+          architecture, performance testing, and team enablement. Built 20+ Cypress frameworks from scratch and 3000+
+          automated tests across 20+ applications. Reduced regression cycles from around 3 days of manual testing to
+          under 2 hours. Strong in UI, API, end-to-end, visual, authentication, and database validation, with hands-on
+          work in GitHub Actions, Jenkins, Docker, TestRail, Jira, JMeter, Python, and .NET-based internal testing
+          utilities. </p>
+        <div class="chips"> <span class="chip">Cypress</span> <span class="chip">JMeter</span> <span class="chip">GitHub
+            Actions</span> <span class="chip">Jenkins</span> <span class="chip">Docker</span> <span class="chip">REST
+            API Testing</span> <span class="chip">DB Testing</span> <span class="chip">UI Testing</span> <span
+            class="chip">Leadership</span> </div>
+        <div class="section-divider"> <span>Contact & Profiles</span> </div>
+        <div class="cta-row"> <a class="btn" href="mailto:oli.galea95@gmail.com">Email</a> <a class="btn secondary"
+            href="tel:+40765263489">Call</a> <a class="btn secondary" target="_blank" rel="noreferrer"
+            href="https://www.linkedin.com/in/olimpiu-galea-3189b5253/">LinkedIn</a> <a class="btn secondary"
+            target="_blank" rel="noreferrer"
+            href="https://www.upwork.com/freelancers/~01074b72ebdf9f9573?viewMode=1">Upwork</a> </div>
       </div>
-
       <aside class="card hero-side">
         <div class="mini">
-          <h3>Contact</h3>
-          <img src="assets/image.jpg" alt="Olimpiu-Vasile Galea" style="
-            width:150px;
-            height:auto;
-            border-radius:22px;
-            object-fit:cover;
-            box-shadow:0 10px 30px rgba(0,0,0,.45);
-          " />
+          <h3>Contact</h3> <img src="assets/image.jpg" alt="Olimpiu-Vasile Galea" class="profile-photo" />
           <p>📍 Cluj-Napoca, Romania</p>
           <p>📞 (+40) 0765 263 489</p>
           <p>✉️ <a href="mailto:oli.galea95@gmail.com">oli.galea95@gmail.com</a></p>
@@ -558,17 +679,12 @@
         </div>
       </aside>
     </section>
-
     <section class="metrics" aria-label="Career highlights">
-
       <div class="metric card">
         <div class="badge-num">AI Tools</div>
-        <div class="label">
-          Daily AI-assisted development using Cursor and modern LLMs (GPT / Claude Opus) to accelerate automation
-          frameworks and debugging
-        </div>
+        <div class="label"> Daily AI-assisted development using Cursor and modern LLMs (GPT / Claude Opus) to accelerate
+          automation frameworks and debugging </div>
       </div>
-
       <div class="metric card">
         <div class="num" data-target="20">0+</div>
         <div class="label">Cypress frameworks built from scratch</div>
@@ -577,14 +693,11 @@
         <div class="num" data-target="3000">0+</div>
         <div class="label">Automated tests written across products</div>
       </div>
-
       <div class="metric card">
         <div class="num" data-target="5">0+</div>
         <div class="label">Projects run in parallel in CI</div>
       </div>
-
     </section>
-
     <div class="grid">
       <section class="card section" id="experience">
         <h2>Professional Experience</h2>
@@ -615,149 +728,106 @@
               <li>Produced training documents and best-practices documentation for QA teams.</li>
             </ul>
           </article>
-
           <article class="item">
             <h3>Manual Tester / Software Tester</h3>
             <div class="meta">Lateral Inc · Cluj-Napoca</div>
             <ul>
               <li>Performed <strong>manual regression, acceptance, and exploratory testing</strong> for multiple web
                 applications across different client projects.</li>
-
               <li>Designed and maintained <strong>structured test cases and test plans</strong> in TestRail while
                 tracking defects and collaborating with developers through Jira.</li>
-
               <li>Participated in <strong>performance and load testing using JMeter</strong> to evaluate application
                 stability under heavy traffic conditions.</li>
-
               <li>Coordinated testing efforts during <strong>release cycles and code freeze periods</strong>, ensuring
                 features were validated before production deployment.</li>
-
               <li>Began learning <strong>test automation independently outside working hours</strong>, experimenting
                 with Cypress to improve testing efficiency.</li>
-
               <li>Built early automation prototypes and demonstrated their value internally, helping introduce
                 <strong>automation testing into client projects</strong>.
               </li>
-
               <li>These initiatives contributed to automation becoming part of <strong>project offerings and client
                   contracts</strong>, enabling the transition into a full-time automation engineering role.</li>
             </ul>
           </article>
-
           <article class="item">
             <h3>Data Entry Team Lead</h3>
             <div class="meta">Lateral Inc · Cluj</div>
             <ul>
               <li>Led a <strong>remote team of 6–8 data operators</strong>, coordinating task distribution and ensuring
                 consistent delivery quality.</li>
-
               <li>Designed and optimized <strong>data processing workflows</strong> to improve team efficiency and
                 operational accuracy.</li>
-
               <li>Developed <strong>Python scripts to automate repetitive data handling tasks</strong>, reducing manual
                 workload and improving productivity.</li>
-
               <li>Conducted <strong>interviews and onboarding</strong> for new team members, helping scale the
                 distributed team.</li>
-
               <li>Introduced <strong>quality control procedures</strong> to maintain consistency across large volumes of
                 processed data.</li>
-
               <li>Worked closely with internal teams to refine operational tools and improve data handling processes.
               </li>
             </ul>
           </article>
-
           <article class="item">
             <h3>Data Entry Operator</h3>
             <div class="meta">Lateral Inc · Cluj-Napoca · November 2017</div>
             <ul>
               <li>Performed high-volume <strong>data labeling, validation, and editing</strong> tasks supporting
                 internal operational workflows.</li>
-
               <li>Maintained strong attention to detail while working with <strong>structured datasets and repetitive
                   processes</strong>.</li>
-
               <li>Collaborated with internal teams to ensure <strong>data accuracy and consistency</strong> across
                 operational systems.</li>
-
               <li>Began exploring <strong>Python and SQL</strong> to better understand technical workflows and
                 automation opportunities.</li>
-
               <li>Developed an early interest in <strong>process automation and technical problem solving</strong>,
                 which later led to a transition into software testing.</li>
             </ul>
           </article>
         </div>
       </section>
-
       <div>
         <section class="card section" id="skills">
           <h2>Skills & Tools</h2>
           <div class="skill-groups">
             <div class="skill-box">
               <h3>Automation</h3>
-              <div class="tag-list">
-                <span class="tag">Cypress framework</span>
-                <span class="tag">Custom commands</span>
-                <span class="tag">Reporters</span>
-                <span class="tag">Fixtures</span>
-                <span class="tag">Test data generators</span>
-                <span class="tag">Parallelization</span>
-                <span class="tag">Environment configs</span>
+              <div class="tag-list"> <span class="tag">Cypress framework</span> <span class="tag">Custom commands</span>
+                <span class="tag">Reporters</span> <span class="tag">Fixtures</span> <span class="tag">Test data
+                  generators</span> <span class="tag">Parallelization</span> <span class="tag">Environment
+                  configs</span>
               </div>
             </div>
             <div class="skill-box">
               <h3>Testing</h3>
-              <div class="tag-list">
-                <span class="tag">UI testing</span>
-                <span class="tag">REST & graphQL API testing</span>
-                <span class="tag">DB testing</span>
-                <span class="tag">End-to-end</span>
-                <span class="tag">Visual testing</span>
-                <span class="tag">Contract validation</span>
-                <span class="tag">Integration testing</span>
-              </div>
+              <div class="tag-list"> <span class="tag">UI testing</span> <span class="tag">REST & graphQL API
+                  testing</span> <span class="tag">DB testing</span> <span class="tag">End-to-end</span> <span
+                  class="tag">Visual testing</span> <span class="tag">Contract validation</span> <span
+                  class="tag">Integration testing</span> </div>
             </div>
             <div class="skill-box">
               <h3>Performance & CI/CD</h3>
-              <div class="tag-list">
-                <span class="tag">JMeter</span>
-                <span class="tag">Custom HTML reports</span>
-                <span class="tag">GitHub Actions</span>
-                <span class="tag">Jenkins</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Matrix runs</span>
-                <span class="tag">Post-run email</span>
+              <div class="tag-list"> <span class="tag">JMeter</span> <span class="tag">Custom HTML reports</span> <span
+                  class="tag">GitHub Actions</span> <span class="tag">Jenkins</span> <span class="tag">Docker</span>
+                <span class="tag">Matrix runs</span> <span class="tag">Post-run email</span>
               </div>
             </div>
             <div class="skill-box">
               <h3>Programming & Teamwork</h3>
-              <div class="tag-list">
-                <span class="tag">Python</span>
-                <span class="tag">SQL</span>
-                <span class="tag">.NET C#</span>
-                <span class="tag">Jira</span>
-                <span class="tag">TestRail</span>
-                <span class="tag">Team Lead skills</span>
-                <span class="tag">Interviewing</span>
-              </div>
+              <div class="tag-list"> <span class="tag">Python</span> <span class="tag">SQL</span> <span class="tag">.NET
+                  C#</span> <span class="tag">Jira</span> <span class="tag">TestRail</span> <span class="tag">Team Lead
+                  skills</span> <span class="tag">Interviewing</span> </div>
             </div>
           </div>
         </section>
-
         <section class="card section" id="impact">
           <h2>Impact Snapshot</h2>
-          <div class="filter-row">
-            <button class="filter active" data-filter="all">All</button>
-            <button class="filter" data-filter="automation">Automation</button>
-            <button class="filter" data-filter="leadership">Leadership</button>
-            <button class="filter" data-filter="performance">Performance</button>
-          </div>
+          <div class="filter-row"> <button class="filter active" data-filter="all">All</button> <button class="filter"
+              data-filter="automation">Automation</button> <button class="filter"
+              data-filter="leadership">Leadership</button> <button class="filter"
+              data-filter="performance">Performance</button> </div>
           <div class="accordion" id="impactList">
-            <div class="accordion-item open" data-kind="automation">
-              <button class="accordion-btn"><span>Framework architecture at scale</span><span
-                  class="chev">⌄</span></button>
+            <div class="accordion-item open" data-kind="automation"> <button class="accordion-btn"> <span>Framework
+                  architecture at scale</span> <span class="chev">⌄</span> </button>
               <div class="accordion-body">
                 <ul>
                   <li>20+ frameworks from scratch.</li>
@@ -767,8 +837,8 @@
                 </ul>
               </div>
             </div>
-            <div class="accordion-item" data-kind="automation">
-              <button class="accordion-btn"><span>Test strategy design</span><span class="chev">⌄</span></button>
+            <div class="accordion-item" data-kind="automation"> <button class="accordion-btn"> <span>Test strategy
+                  design</span> <span class="chev">⌄</span> </button>
               <div class="accordion-body">
                 <ul>
                   <li>Defined about 90% of project automation strategy from scratch.</li>
@@ -777,8 +847,8 @@
                 </ul>
               </div>
             </div>
-            <div class="accordion-item" data-kind="leadership">
-              <button class="accordion-btn"><span>Mentoring and hiring</span><span class="chev">⌄</span></button>
+            <div class="accordion-item" data-kind="leadership"> <button class="accordion-btn"> <span>Mentoring and
+                  hiring</span> <span class="chev">⌄</span> </button>
               <div class="accordion-body">
                 <ul>
                   <li>Built internal Cypress Academy for beginners.</li>
@@ -787,8 +857,8 @@
                 </ul>
               </div>
             </div>
-            <div class="accordion-item" data-kind="performance">
-              <button class="accordion-btn"><span>Performance and reporting</span><span class="chev">⌄</span></button>
+            <div class="accordion-item" data-kind="performance"> <button class="accordion-btn"> <span>Performance and
+                  reporting</span> <span class="chev">⌄</span> </button>
               <div class="accordion-body">
                 <ul>
                   <li>Worked with JMeter for performance and load testing.</li>
@@ -800,33 +870,28 @@
             </div>
           </div>
         </section>
-
         <section class="card section" id="education">
           <h2>Education & References</h2>
           <div class="accordion">
-            <div class="accordion-item open">
-              <button class="accordion-btn"><span>Education</span><span class="chev">⌄</span></button>
+            <div class="accordion-item open"> <button class="accordion-btn"> <span>Education</span> <span
+                  class="chev">⌄</span> </button>
               <div class="accordion-body">
                 <ul>
                   <li><strong>Babes-Bolyai University, Faculty of Mathematics and Informatics,
-                      Cluj-Napoca</strong><br />Mathematics and Informatics · October 2016 – September 2022 · Profile
+                      Cluj-Napoca</strong><br /> Mathematics and Informatics · October 2016 – September 2022 · Profile
                     noted in original CV as 2nd year.</li>
                   <li><strong>"Andrei Mureșanu" National College, Dej</strong><br />Mathematics-Computer Sciences
                     Advanced · September 2012 – June 2015.</li>
                 </ul>
               </div>
             </div>
-
           </div>
-
-
         </section>
         <section class="card section" id="extracurricular">
           <h2>Extracurricular Activities</h2>
           <div class="accordion">
-
-            <div class="accordion-item">
-              <button class="accordion-btn"><span>Freelance / Besides 9 to 5</span><span class="chev">⌄</span></button>
+            <div class="accordion-item"> <button class="accordion-btn"> <span>Freelance / Besides 9 to 5</span> <span
+                  class="chev">⌄</span> </button>
               <div class="accordion-body">
                 <ul>
                   <li>Helps clients build a fast and easy way to make sure their entire application is working.</li>
@@ -837,129 +902,49 @@
                 </ul>
               </div>
             </div>
-
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-btn">
-              <span>Automation Playbook (Architecture & Strategy Guide)</span>
-              <span class="chev">⌄</span>
-            </button>
-
-            <div class="accordion-body">
-              <ul>
-                <li><strong>Understanding the Target Platform</strong> – analyzing application architecture, services,
-                  APIs and dependencies before designing automation.</li>
-
-                <li><strong>Defining Automation Goals & Scope</strong> – identifying the right level of coverage and
-                  avoiding unnecessary automation.</li>
-
-                <li><strong>Choosing the Automation Framework</strong> – selecting tools and architecture patterns
-                  suitable for the project.</li>
-
-                <li><strong>Test Strategy & Test Types</strong> – balancing UI, API, integration, and acceptance testing
-                  layers.</li>
-
-                <li><strong>Test Case Planning & Design</strong> – designing maintainable tests focused on meaningful
-                  validation.</li>
-
-                <li><strong>Best Practices</strong>
-                  <ul>
-                    <li>Page Object vs Non-Page Object approaches</li>
-                    <li>Conditional testing strategies</li>
-                    <li>TypeScript vs JavaScript decisions</li>
-                    <li>Validating APIs alongside UI flows</li>
-                    <li>"Bugs are allowed, same bug twice isn't"</li>
-                    <li>Integration testing practices</li>
-                  </ul>
-                </li>
-
-                <li><strong>Test Execution Strategy</strong> – suite organization, parallel execution, and CI
-                  integration.</li>
-
-                <li><strong>Reporting & Visibility</strong> – designing reports that provide actionable feedback for
-                  teams.</li>
-
-                <li><strong>Implementation Roadmap</strong> – practical automation adoption plan from Day 1 to Week 10.
-                </li>
-
-                <li><strong>Using AI to Improve Automation Work</strong></li>
-
-                <li><strong>AI as a Productivity Tool (Not a Replacement for Understanding)</strong></li>
-              </ul>
+            <div class="accordion-item"> <button class="accordion-btn"> <span>Automation Playbook (Architecture &
+                  Strategy Guide)</span> <span class="chev">⌄</span> </button>
+              <div class="accordion-body">
+                <ul>
+                  <li><strong>Understanding the Target Platform</strong> – analyzing application architecture, services,
+                    APIs and dependencies before designing automation.</li>
+                  <li><strong>Defining Automation Goals & Scope</strong> – identifying the right level of coverage and
+                    avoiding unnecessary automation.</li>
+                  <li><strong>Choosing the Automation Framework</strong> – selecting tools and architecture patterns
+                    suitable for the project.</li>
+                  <li><strong>Test Strategy & Test Types</strong> – balancing UI, API, integration, and acceptance
+                    testing layers.</li>
+                  <li><strong>Test Case Planning & Design</strong> – designing maintainable tests focused on meaningful
+                    validation.</li>
+                  <li><strong>Best Practices</strong>
+                    <ul>
+                      <li>Page Object vs Non-Page Object approaches</li>
+                      <li>Conditional testing strategies</li>
+                      <li>TypeScript vs JavaScript decisions</li>
+                      <li>Validating APIs alongside UI flows</li>
+                      <li>"Bugs are allowed, same bug twice isn't"</li>
+                      <li>Integration testing practices</li>
+                    </ul>
+                  </li>
+                  <li><strong>Test Execution Strategy</strong> – suite organization, parallel execution, and CI
+                    integration.</li>
+                  <li><strong>Reporting & Visibility</strong> – designing reports that provide actionable feedback for
+                    teams.</li>
+                  <li><strong>Implementation Roadmap</strong> – practical automation adoption plan from Day 1 to Week
+                    10.</li>
+                  <li><strong>Using AI to Improve Automation Work</strong></li>
+                  <li><strong>AI as a Productivity Tool (Not a Replacement for Understanding)</strong></li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
       </div>
     </div>
-
     <p class="foot">Interactive HTML CV · Designed for modern browsers · Easy to export to PDF from the browser print
       dialog.</p>
   </div>
-
-  <script>
-    const accordions = document.querySelectorAll('.accordion-item');
-    accordions.forEach(item => {
-      const btn = item.querySelector('.accordion-btn');
-      btn.addEventListener('click', () => item.classList.toggle('open'));
-    });
-
-    const filters = document.querySelectorAll('.filter');
-    const impactItems = document.querySelectorAll('#impactList .accordion-item');
-    filters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const kind = btn.dataset.filter;
-        impactItems.forEach(item => {
-          item.style.display = kind === 'all' || item.dataset.kind === kind ? 'block' : 'none';
-        });
-      });
-    });
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = Number(el.dataset.target);
-        let cur = 0;
-        const step = Math.max(1, Math.ceil(target / 40));
-        const tick = () => {
-          cur += step;
-          if (cur >= target) {
-            el.textContent = target + '+';
-            return;
-          }
-          el.textContent = cur + '+';
-          requestAnimationFrame(tick);
-        };
-        tick();
-        observer.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.num').forEach(n => observer.observe(n));
-
-    const themeBtn = document.getElementById('themeBtn');
-    let highContrast = false;
-    themeBtn.addEventListener('click', () => {
-      highContrast = !highContrast;
-      document.documentElement.style.setProperty('--bg', highContrast ? '#020617' : '#0b1020');
-      document.documentElement.style.setProperty('--text', highContrast ? '#ffffff' : '#e5eefc');
-      document.documentElement.style.setProperty('--muted', highContrast ? '#d5e3ff' : '#9fb1d1');
-      document.documentElement.style.setProperty('--panel', highContrast ? 'rgba(2,6,23,.95)' : 'rgba(17,24,39,.82)');
-    });
-
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav a');
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
-        }
-      });
-    }, { threshold: 0.45 });
-    sections.forEach(sec => navObserver.observe(sec));
-  </script>
+  <script> const accordions = document.querySelectorAll('.accordion-item'); accordions.forEach(item => { const btn = item.querySelector('.accordion-btn'); if (btn) { btn.addEventListener('click', () => item.classList.toggle('open')); } }); const filters = document.querySelectorAll('.filter'); const impactItems = document.querySelectorAll('#impactList .accordion-item'); filters.forEach(btn => { btn.addEventListener('click', () => { filters.forEach(b => b.classList.remove('active')); btn.classList.add('active'); const kind = btn.dataset.filter; impactItems.forEach(item => { item.style.display = kind === 'all' || item.dataset.kind === kind ? 'block' : 'none'; }); }); }); const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (!entry.isIntersecting) return; const el = entry.target; const target = Number(el.dataset.target); let cur = 0; const step = Math.max(1, Math.ceil(target / 40)); const tick = () => { cur += step; if (cur >= target) { el.textContent = target + '+'; return; } el.textContent = cur + '+'; requestAnimationFrame(tick); }; tick(); observer.unobserve(el); }); }, { threshold: 0.5 }); document.querySelectorAll('.num').forEach(n => observer.observe(n)); const themeBtn = document.getElementById('themeBtn'); if (themeBtn) { let highContrast = false; themeBtn.addEventListener('click', () => { highContrast = !highContrast; document.documentElement.style.setProperty('--bg', highContrast ? '#020617' : '#0b1020'); document.documentElement.style.setProperty('--text', highContrast ? '#ffffff' : '#e5eefc'); document.documentElement.style.setProperty('--muted', highContrast ? '#d5e3ff' : '#9fb1d1'); document.documentElement.style.setProperty('--panel', highContrast ? 'rgba(2,6,23,.95)' : 'rgba(17,24,39,.82)'); }); } const sections = document.querySelectorAll('section[id]'); const navLinks = document.querySelectorAll('.nav a'); const navObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { navLinks.forEach(link => { link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id); }); } }); }, { threshold: 0.45 }); sections.forEach(sec => navObserver.observe(sec)); </script>
 </body>
 
 </html>
