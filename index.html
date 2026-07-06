@@ -217,6 +217,61 @@
       color: var(--text);
     }
 
+    .pdf-download-banner {
+      margin-bottom: 18px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(248, 113, 113, 0.35);
+      background: linear-gradient(135deg, rgba(127, 29, 29, 0.42), rgba(69, 10, 10, 0.28));
+      box-shadow: 0 16px 40px rgba(127, 29, 29, 0.18), inset 0 1px 0 rgba(254, 202, 202, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .pdf-download-banner p {
+      margin: 0;
+      color: #fecaca;
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+
+    .btn-download-pdf {
+      width: min(100%, 420px);
+      min-height: 58px;
+      padding: 16px 24px;
+      border-radius: 16px;
+      border: 1px solid rgba(252, 165, 165, 0.55);
+      background: linear-gradient(135deg, rgba(248, 113, 113, 0.28), rgba(239, 68, 68, 0.18));
+      color: #fff5f5;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 28px rgba(239, 68, 68, 0.22);
+      transition: .22s ease;
+    }
+
+    .btn-download-pdf:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(248, 113, 113, 0.38), rgba(239, 68, 68, 0.28));
+      box-shadow: 0 14px 34px rgba(239, 68, 68, 0.3);
+      color: #ffffff;
+    }
+
+    .btn-download-pdf svg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+    }
+
     .hero-side {
       padding: 22px;
       display: grid;
@@ -556,6 +611,17 @@
         width: 100%;
       }
 
+      .pdf-download-banner {
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .btn-download-pdf {
+        width: 100%;
+        min-height: 52px;
+        font-size: 16px;
+      }
+
       .profile-photo {
         width: 110px;
         border-radius: 16px;
@@ -636,6 +702,18 @@
       <nav class="nav" id="nav"> <a href="#top" class="active">Top</a> <a href="#experience">Experience</a> <a
           href="#skills">Skills</a> <a href="#impact">Impact</a> <a href="#education">Education</a> <a
           href="#extracurricular">Extracurricular</a> </nav>
+    </div>
+    <div class="pdf-download-banner">
+      <p>ATS-friendly PDF version — same content as this page</p>
+      <a class="btn-download-pdf" href="Olimpiu-Galea-CV.pdf" download="Olimpiu-Galea-CV.pdf">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3v10m0 0l4-4m-4 4L8 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" />
+        </svg>
+        Download PDF
+      </a>
     </div>
     <section class="hero" id="top">
       <div class="card hero-main">
